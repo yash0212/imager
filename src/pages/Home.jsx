@@ -3,37 +3,37 @@ import { AspectRatio, Flex, Grid, HStack, Image } from '@chakra-ui/react'
 const Home = () => {
     const images = [
         {
-            link: 'https://placehold.co/600x400/png',
+            link: '/images/beach.jpg',
             title: 'abc',
             starCount: 0,
         },
         {
-            link: 'https://placehold.co/500x400/png',
+            link: '/images/building.jpg',
             title: 'def',
             starCount: 0,
         },
         {
-            link: 'https://placehold.co/300x400/png',
+            link: '/images/city.jpg',
             title: 'def',
             starCount: 0,
         },
         {
-            link: 'https://placehold.co/700x400/png',
+            link: '/images/forest.jpg',
             title: 'def',
             starCount: 0,
         },
         {
-            link: 'https://placehold.co/200x400/png',
+            link: '/images/milky-way.jpg',
             title: 'def',
             starCount: 0,
         },
         {
-            link: 'https://placehold.co/300x400/png',
+            link: '/images/mountains.jpg',
             title: 'def',
             starCount: 0,
         },
         {
-            link: 'https://placehold.co/600x400/png',
+            link: '/images/viper.jpg',
             title: 'def',
             starCount: 0,
         },
@@ -43,7 +43,15 @@ const Home = () => {
         <Flex flexDirection={'column'} py={4}>
             <Flex flexWrap={'wrap'} id="images-wrapper">
                 {images.map((image, i) => {
-                    return <Image key={i} src={image.link} mr={4} mb={4} />
+                    return (
+                        <Image
+                            key={i}
+                            maxH={400}
+                            src={image.link}
+                            mr={4}
+                            mb={4}
+                        />
+                    )
                 })}
             </Flex>
         </Flex>
