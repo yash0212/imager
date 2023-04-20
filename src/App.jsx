@@ -1,13 +1,14 @@
-import { Flex, Heading, Text } from '@chakra-ui/react'
+import Home from './pages/Home'
+import Layout from './components/Layout'
+import { Route, Routes } from 'react-router-dom'
 
-function App() {
+const App = () => {
     return (
-        <Flex flexDirection={'column'}>
-            <Heading as="h1" size="4xl">
-                Imager
-            </Heading>
-            <Text>A simple sapp to share photos</Text>
-        </Flex>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+            </Route>
+        </Routes>
     )
 }
 
