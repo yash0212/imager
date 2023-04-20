@@ -6,7 +6,9 @@ const Layout = () => {
     return (
         <Flex flexDirection="column" id="app-wrapper">
             <Navbar />
-            <Outlet />
+            <Flex px={128}>
+                <Outlet />
+            </Flex>
         </Flex>
     )
 }

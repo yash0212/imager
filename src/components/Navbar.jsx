@@ -1,7 +1,14 @@
-import { Button, Flex, Image } from '@chakra-ui/react'
+import { Button, Flex, Image, useDisclosure } from '@chakra-ui/react'
 import { FaCloudUploadAlt } from 'react-icons/fa'
+import UploadModal from './UploadModal'
 
 const Navbar = () => {
+    const {
+        isOpen: isUploadModalOpen,
+        onOpen: openUploadModal,
+        onClose: closeUploadModal,
+    } = useDisclosure()
+
     return (
         <Flex
             bgColor="primary"
@@ -21,7 +28,7 @@ const Navbar = () => {
                     colorScheme="facebook"
                     leftIcon={<FaCloudUploadAlt size={'24'} />}
                     onClick={() => {
-                        console.log('upload button clicked')
+                        openUploadModal()
                     }}
                 >
                     Upload
@@ -36,6 +43,10 @@ const Navbar = () => {
                     Signin
                 </Button>
             </Flex>
+            <UploadModal
+                isOpen={isUploadModalOpen}
+                onClose={closeUploadModal}
+            />
         </Flex>
     )
 }
