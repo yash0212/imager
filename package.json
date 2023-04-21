@@ -1,7 +1,7 @@
 {
     "name": "imager2",
     "private": true,
-    "version": "0.0.0",
+    "version": "1.0.0",
     "type": "module",
     "homepage": "https://yash0212.github.io/imager/",
     "scripts": {
