@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
+const appRouter = require("./router");
 
-app.get("/", (req, res) => {
-    res.status(200).json({ message: "Works Fine!" });
-});
+
+app.use("/api/", appRouter);
 
 // Start the server
 app.listen(8080, () => {
