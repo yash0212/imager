@@ -4,11 +4,12 @@ const imageController = require("../controllers/image.controller");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
+const { validateToken } = require("../middlewares/auth.middleware");
 
 // Define storage for multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "./uploads");
+        cb(null, "./temp");
     },
     filename: (req, file, cb) => {
         cb(
@@ -23,6 +24,10 @@ const upload = multer({ storage });
 
 router.get("/", imageController.listAll);
 router.get("/:imageSlug", imageController.get);
-router.post("/", [upload.single("image")], imageController.create);
+router.post(
+    "/",
+    [validateToken, upload.single("image")],
+    imageController.create
+);
 
 module.exports = router;

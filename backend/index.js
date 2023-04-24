@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const appRouter = require("./router");
 
-
+app.use(express.json());
 app.use("/api/", appRouter);
 
 // Start the server
