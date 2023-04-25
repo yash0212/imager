@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const imageController = require("../controllers/image.controller");
 const multer = require("multer");
-const fs = require("fs");
 const path = require("path");
 const { validateToken } = require("../middlewares/auth.middleware");
 
