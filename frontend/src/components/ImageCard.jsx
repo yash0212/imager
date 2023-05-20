@@ -1,4 +1,4 @@
-import { Flex, Icon, Image, Text } from '@chakra-ui/react'
+import { Flex, Icon, Image, Text, WrapItem } from '@chakra-ui/react'
 import { useState } from 'react'
 import { FaStar } from 'react-icons/fa'
 import { GoArrowDown, GoArrowUp } from 'react-icons/go'
@@ -7,10 +7,7 @@ const ImageCard = ({ imageData, upvote, downvote }) => {
     const [isHovering, setHovering] = useState()
 
     return (
-        <Flex
-            mr={4}
-            mb={4}
-            position={'relative'}
+        <WrapItem
             onMouseEnter={() => {
                 setHovering(true)
             }}
@@ -69,7 +66,7 @@ const ImageCard = ({ imageData, upvote, downvote }) => {
                     </Flex>
                 </Flex>
             </Flex>
-        </Flex>
+        </WrapItem>
     )
 }
 
