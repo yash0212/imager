@@ -1,4 +1,4 @@
-import { AspectRatio, Flex, Grid, HStack, Image } from '@chakra-ui/react'
+import { Flex, Wrap } from '@chakra-ui/react'
 import ImageCard from '../components/ImageCard'
 import { useState } from 'react'
 
@@ -70,7 +70,6 @@ const Home = () => {
         let _images = [...images]
         _images = _images.map(img => {
             if (img.id === id) {
-                
                 img.starCount += 1
             }
             return img
@@ -93,7 +92,7 @@ const Home = () => {
 
     return (
         <Flex flexDirection={'column'} py={4}>
-            <Flex flexWrap={'wrap'} id="images-wrapper">
+            <Wrap id="images-wrapper" spacing={4}>
                 {images.map(image => {
                     return (
                         <ImageCard
@@ -104,7 +103,7 @@ const Home = () => {
                         />
                     )
                 })}
-            </Flex>
+            </Wrap>
         </Flex>
     )
 }
